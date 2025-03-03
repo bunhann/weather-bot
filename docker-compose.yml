@@ -3,6 +3,9 @@ version: '3.8'
 services:
   weather_bot:
     build: .
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
     volumes:
       - .:/app
+      - ./db/weather_bot.db:/app/db/weather_bot.db
     restart: always
