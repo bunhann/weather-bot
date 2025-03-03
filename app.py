@@ -1,14 +1,18 @@
 import logging
 from telegram import Update, ReplyKeyboardMarkup
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
 from database import initialize_db, save_user_info, save_location
 from khmer_speech import generate_khmer_audio
 import requests
+from dotenv import load_dotenv
 import os
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Initialize SQLite database
 initialize_db()
