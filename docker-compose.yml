@@ -7,5 +7,4 @@ services:
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
     volumes:
       - .:/app
-      - ./db/weather_bot.db:/app/db/weather_bot.db
     restart: always
