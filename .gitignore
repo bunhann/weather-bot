@@ -11,6 +11,7 @@ weather_bot.db
 venv/
 env/
 ENV/
+myenv/
 .env
 
 # Docker files
